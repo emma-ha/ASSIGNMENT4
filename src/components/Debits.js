@@ -6,10 +6,10 @@ Note: You need to work on this file for the Assignment.
 ==================================================*/
 import {Link} from 'react-router-dom';
 
-const Debits = (props) => {
+const Debits = (prop) => {
   // Create the list of Debit items
   let debitsView = () => {
-    const { debits } = props;
+    const { debits } = prop;
     return debits.map((debit) => {  // Extract "id", "amount", "description" and "date" properties of each debits JSON array element
       let date = debit.date.slice(0,10);
       return <li key={debit.id}>{debit.amount} {debit.description} {date}</li>
@@ -22,7 +22,7 @@ const Debits = (props) => {
 
       {debitsView()}
 
-      <form onSubmit={props.addDebit}>
+      <form onSubmit={prop.addDebit}>
         <input type="text" name="description" />
         <input type="number" name="amount" />
         <button type="submit">Add Debit</button>
