@@ -21,7 +21,7 @@ const Debits = (props) => {
   {
     e.preventDefault();
     props.addDebit({ amount: e.target.amount.value, date: new Date().toISOString(),
-      description: e.target.description.value,});
+      description: e.target.description.value,}); //add to list
   }
   // Render the list of Debit items and a form to input new Debit item
   return (
@@ -32,7 +32,7 @@ const Debits = (props) => {
 
       <form onSubmit={e => {handleSubmit(e)} }>
         <input type="text" name="description" />
-        <input type="number" name="amount" />
+        <input type="number" name="amount" step = "0.01" />
         <button type="submit">Add Debit</button>
       </form>
       <br/>
