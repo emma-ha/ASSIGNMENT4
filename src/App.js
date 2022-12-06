@@ -33,11 +33,11 @@ class App extends Component {
   {
     let totalDebit = 0;
     let totalCredit = 0;
-    let API = 'https://moj-api.herokuapp.com/'; //API link
+    let API = 'https://johnnylaicode.github.io/api/'; //API link
     try 
     {
-      let cAPI = await axios.get(API + 'credits');
-      let dAPI = await axios.get(API + 'debits'); 
+      let cAPI = await axios.get(API + 'credits.json');
+      let dAPI = await axios.get(API + 'debits.json'); 
       this.setState({credits: cAPI.data}); //data into list
       this.setState({debits: dAPI.data}); //data into list
     }
